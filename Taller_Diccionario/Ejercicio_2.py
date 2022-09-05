@@ -3,4 +3,5 @@ lista=[]
 for i in Diccionario:
     if (not(Diccionario[i] in lista)):
         lista.append(Diccionario[i])
+    #print(list(set(lista)))
 print(lista)
