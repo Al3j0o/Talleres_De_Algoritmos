@@ -1,5 +1,3 @@
-from re import I
-
 
 usuarios = { 
 "iperurena": { 
@@ -18,17 +16,49 @@ usuarios = {
 "password": "123456" 
 } 
 } 
+listap=[]
+listaf=[]
+listal=[]
 
-print(usuarios["iperurena"])
-
-a=input("ingrese su usuario: ")
-b=int(input("Ingrese la contraseña: "))
 c=0
-while (a!=usuarios["iperurena"] and a!=usuarios["aolaizola"] and a!=usuarios["fmuguruza"]):
-    c+=1
+for i in usuarios["iperurena"].values():
+    listap.append(i)
+listap[2]=int(listap[2])
 
+    
+for x in usuarios["fmuguruza"].values():
+    listaf.append(x)
+listaf[2]=int(listaf[2])
+    
+for y in usuarios["aolaizola"].values():
+    listal.append(y)
+listal[2]=int(listal[2])
 
-print(usuarios.keys())
+user=input("Ingrese el usuario: ")
+contra=int(input("Ingrese la contraseña: "))
+
+while(c<3):
+    if(user!="iperurana" and user!="fmuguruza" and user!="aolaizola"):
+        c+=1
+        print("usuario inválido")
+        user=input("Ingrese el usuario: ")
+        contra=int(input("Ingrese la contraseña: "))
+    if(contra!=listaf[2] and contra!=listal[2] and contra!=listap[2]):
+        print("Contraseña inválida")
+        user=input("Ingrese el usuario: ")
+        contra=int(input("Ingrese la contraseña: "))
+    elif(user=="iperurana" and contra==listap[2]):
+        print(listap[0],listap[1])
+        break
+    elif(user=="fmuguruza" and contra==listaf[2]):
+        print(listaf[0],listaf[1])
+        break
+    elif(user=="aolaizola" and contra==listal[2]):
+        print(listal[0],listal[1])
+        break
+
+    
+
         
 
 
